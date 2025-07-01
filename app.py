@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import pickle
+from fastapi.responses import HTMLResponse
 import pandas as pd
 import numpy as np
 
