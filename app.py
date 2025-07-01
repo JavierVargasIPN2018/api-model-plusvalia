@@ -41,3 +41,22 @@ def predict(req: PredictionRequest):
         "months": list(range(1, 13))
     }
 
+@app.get("/", response_class=HTMLResponse)
+def home():
+    return """
+    <html>
+        <head>
+            <title>API Plusvalía</title>
+            <style>
+                body { font-family: sans-serif; text-align: center; padding-top: 100px; background: #f5f5f5; }
+                h1 { font-size: 2.5rem; color: #333; }
+                p { font-size: 1.2rem; color: #666; }
+            </style>
+        </head>
+        <body>
+            <h1>Bienvenido a la API de Predicción de Plusvalía</h1>
+            <p>Usa el endpoint <code>/predict</code> para obtener predicciones.</p>
+            <p>Documentación: <a href="/docs">/docs</a></p>
+        </body>
+    </html>
+    """
